@@ -98,7 +98,6 @@ const app = function() {
 			console.log(this.state.background	)
 			return (
 					<div style={styleObj} className="AppView">
-						<h1>TIME MACHINE</h1>
 						<TimeView currYear={this.state.currentYear}/>
 						<ButtonView />
 					</div>
@@ -109,8 +108,8 @@ const app = function() {
 	const TimeView = React.createClass({
 		render:function(){
 			return (
-					<div className="TimeBox">
-						<h3>Your Current Year In Time Is: <span>{this.props.currYear}</span></h3>
+					<div className="TimeView">
+						<h1>{this.props.currYear}</h1>
 					</div>
 				)
 		}
@@ -128,10 +127,10 @@ const app = function() {
 
 		render:function(){
 			return (
-					<div className="ButtonBox" onClick={this._getClickedButton}>
-						<button data-button="past">BACK TO THE PAST</button>
-						<button data-button="stop">FREEZE TIME</button>
-						<button data-button="future">LEAP TO THE FUTURE</button>
+					<div className="ButtonView" onClick={this._getClickedButton}>
+						<button id="past" data-button="past">GO BACK IN TIME</button>
+						<button id="freeze" data-button="stop">FREEZE TIME</button>
+						<button id="future" data-button="future">LEAP TO THE FUTURE</button>
 					</div>
 				)
 		}
